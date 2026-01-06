@@ -20,6 +20,20 @@ public class BookingDAO {
         return bookings;
     }
 
+    // Adding Helper
+    // It checks if a car with a specific regNumber is booked
+    public boolean isCarAvailable(String regNumber) {
+        // Checking all bookings in the system
+        for (int i = 0; i < bookingCount; i++) {
+            // Checking if the booking exists and if the car's regNumber matches the given regNumber
+            if (bookings[i] != null &&
+            bookings[i].getCar() != null &&
+            bookings[i].getCar().getRegNumber().equals(regNumber)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 

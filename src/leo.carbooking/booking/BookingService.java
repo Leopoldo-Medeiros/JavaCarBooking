@@ -4,9 +4,6 @@ import leo.carbooking.car.Car;
 import leo.carbooking.car.CarDAO;
 import leo.carbooking.user.User;
 import leo.carbooking.user.UserDAO;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class BookingService {
@@ -21,7 +18,7 @@ public class BookingService {
         // 1. Find the user
         User user = null;
         for(User currentUser : UserDAO.getUsers()) {
-            if(currentUser.getId().equals(userId)) {
+            if(currentUser.id().equals(userId)) {
                 user = currentUser;
                 break;
             }
@@ -60,7 +57,7 @@ public class BookingService {
 
         // 4. Create and Save
         bookingDAO.save(new Booking(user, car));
-        System.out.println("✅ Successfully booked " + car.getBrand() + " for " + user.getName());
+        System.out.println("✅ Successfully booked " + car.getBrand() + " for " + user.name());
     }
 
     public Booking[] getBookings() {
@@ -72,7 +69,7 @@ public class BookingService {
         for(Booking b : bookingDAO.getAllBookings()) {
 
             // Here we need to check if the booking exists and if it belongs to the user ID
-            if(b != null && b.getUser().getId().equals(userId)) {
+            if(b != null && b.getUser().id().equals(userId)) {
                 System.out.println(b.getCar().getBrand() + " [" + b.getCar().getRegNumber() + "]" );
                 found = true;
             }
@@ -95,37 +92,7 @@ public class BookingService {
         return false; // Not booked
     }
     
-    // Returns an array of all available (not booked) cars
-    public Car[] getAvailableCars() {
-        // Initialize an empty list to store available cars
-        List<Car> availableCars = new ArrayList<>();
-        
-        // Loop through all cars in the system
-        for (Car car : CarDAO.getCar()) {
-            // Check if the car exists and is not currently booked
-            if (car != null && !isCarBooked(car.getRegNumber())) {
-                // Add the available car to our list
-                availableCars.add(car);
-            }
-        }
-        // Convert the list to an array and return it
-        return availableCars.toArray(new Car[0]);
-    }
-    
-    // Returns an array of all available electric cars
-    public Car[] getAvailableElectricCars() {
-        // Initialize an empty list to store electric cars
-        List<Car> electricCars = new ArrayList<>();
-        
-        // Loop through all cars in the system
-        for (Car car : CarDAO.getCar()) {
-            // Check if the car exists, is electric, and not currently booked
-            if (car != null && car.isElectric() && !isCarBooked(car.getRegNumber())) {
-                // Add the available electric car to our list
-                electricCars.add(car);
-            }
-        }
-        // Convert the list to an array and return it
-        return electricCars.toArray(new Car[0]);
+    public BookingDAO getBookingDAO() {
+        return bookingDAO;
     }
 }

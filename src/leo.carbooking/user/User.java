@@ -2,22 +2,17 @@ package leo.carbooking.user;
 
 import java.util.UUID;
 
-public class User {
-    private final UUID id;
-    private final String name;
+/**
+ * Represents a user in the car booking system.
+ *
+ * <p>Java record providing immutable data storage with auto-generated:
+ * - Private final fields
+ * - Public constructor
+ * - Accessor methods (id(), name())
+ * - equals(), hashCode(), and toString()
+ *
+ * @param id   Unique user identifier (UUID)
+ * @param name User's full name
+ */
 
-    // Constructor
-    public User(UUID id, String name) {
-        // Assigning the values
-        this.id = id;
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-}
+public record User (UUID id, String name){}

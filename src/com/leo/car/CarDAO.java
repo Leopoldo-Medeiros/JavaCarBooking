@@ -1,4 +1,4 @@
-package leo.carbooking.car;
+package com.leo.car;
 
 public class CarDAO {
     private static final Car[] cars;

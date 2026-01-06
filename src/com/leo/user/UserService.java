@@ -1,4 +1,4 @@
-package leo.carbooking.user;
+package com.leo.user;
 
 import java.util.List;
 import java.util.UUID;

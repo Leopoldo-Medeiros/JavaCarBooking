@@ -1,12 +1,12 @@
-package leo.carbooking.ui;
+package com.leo;
 
-import leo.carbooking.booking.BookingService;
-import leo.carbooking.car.CarService;
+import com.leo.booking.BookingService;
+import com.leo.car.CarService;
 import java.util.Scanner;
-import leo.carbooking.booking.Booking;
-import leo.carbooking.car.Car;
-import leo.carbooking.user.User;
-import leo.carbooking.user.UserDAO;
+import com.leo.booking.Booking;
+import com.leo.car.Car;
+import com.leo.user.User;
+import com.leo.user.UserDAO;
 
 import java.util.UUID;
 

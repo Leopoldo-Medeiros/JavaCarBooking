@@ -1,7 +1,7 @@
-package leo.carbooking.booking;
+package com.leo.booking;
 
-import leo.carbooking.car.Car;
-import leo.carbooking.user.User;
+import com.leo.car.Car;
+import com.leo.user.User;
 
 public class Booking {
     private final User user;

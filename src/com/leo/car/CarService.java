@@ -1,6 +1,6 @@
-package leo.carbooking.car;
+package com.leo.car;
 
-import leo.carbooking.booking.BookingDAO;
+import com.leo.booking.BookingDAO;
 
 import java.util.ArrayList;
 import java.util.List;

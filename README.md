@@ -14,7 +14,7 @@ A command-line based Car Booking System built with Java, following Object-Orient
 
 ```
 src/
-├── Main.java                     # Application entry point
+├── com.leo.Main.java                     # Application entry point
 ├── leo.carbooking/
 │   ├── booking/                 # Booking related classes
 │   │   ├── Booking.java         # Booking entity
@@ -54,7 +54,7 @@ src/
 
 3. Run the application:
    ```bash
-   java -cp out Main
+   java -cp out com.leo.Main
    ```
 
 ## 🛠️ Usage

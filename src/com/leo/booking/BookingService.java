@@ -1,9 +1,9 @@
-package leo.carbooking.booking;
+package com.leo.booking;
 
-import leo.carbooking.car.Car;
-import leo.carbooking.car.CarDAO;
-import leo.carbooking.user.User;
-import leo.carbooking.user.UserDAO;
+import com.leo.car.Car;
+import com.leo.car.CarDAO;
+import com.leo.user.User;
+import com.leo.user.UserDAO;
 import java.util.UUID;
 
 public class BookingService {

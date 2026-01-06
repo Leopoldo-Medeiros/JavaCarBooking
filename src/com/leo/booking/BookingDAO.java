@@ -1,4 +1,4 @@
-package leo.carbooking.booking;
+package com.leo.booking;
 
 public class BookingDAO {
     // 1. Creating a constant for max capacity (something like: 100)
